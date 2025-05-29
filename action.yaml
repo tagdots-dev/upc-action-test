@@ -5,7 +5,7 @@ description: 'GitHub action to update pre-commit'
 author: tagdots
 
 branding:
-  icon: activity
+  icon: award
   color: orange
 
 inputs:
