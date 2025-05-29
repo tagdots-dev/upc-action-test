@@ -49,7 +49,7 @@ jobs:
       id: update-pre-commit
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: tagdots/update-pre-commit-action@1.0.0
+      uses: tagdots-dev/upc-action-test@ceebb82af3610a6f8b505a21525cc1a3fb4aa59e # 1.0.0
       with:
         file: .pre-commit-config.yaml
         dry-run: false
@@ -65,6 +65,7 @@ The above GitHub action workflow will:
 * need write permissions to contents and pull-requests (`contents: write` and `pull-requests: write`)
 * update the configuration file - `.pre-commit-config.yaml` (`dry-run: false`)
 * open a pull request when updates become available (`open-pr: true`)
+* use pinned commit hash from the latest release for security reason ([release url](https://github.com/tagdots-dev/upc-action-test/releases))
 
 <br>
 
@@ -93,7 +94,7 @@ jobs:
       id: update-pre-commit
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: tagdots/update-pre-commit-action@1.0.0
+      uses: tagdots-dev/upc-action-test@ceebb82af3610a6f8b505a21525cc1a3fb4aa59e # 1.0.0
       with:
         file: .pre-commit-config.yaml
         dry-run: false
@@ -108,6 +109,7 @@ The above GitHub action workflow will:
 * review the configuration file on a scheduled interval (`- cron: '30 17 * * *'`)
 * update the configuration file - `.pre-commit-config.yaml` (`dry-run: false`)
 * _NOT_ open a pull request when updates become available (`open-pr: false`)
+* use pinned commit hash from the latest release for security reason ([release url](https://github.com/tagdots-dev/upc-action-test/releases))
 
 You will review the workflow results, cherry-pick updates, and open a pull-request yourself.
 
